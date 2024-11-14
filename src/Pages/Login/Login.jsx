@@ -15,10 +15,15 @@ const [signState, setSignState] = useState('Sign In')
       <div className="login-form">
         <h1>{signState}</h1>
         <form>
-          <input type="text" placeholder="Your Name" alt="" />
+          {signState === "Sign Up" ? (
+            <input type="text" placeholder="Your Name" alt="" />
+          ) : (
+            <></>
+          )}
+
           <input type="email" placeholder="Your Email" alt="" />
           <input type="password" placeholder="Password" alt="" />
-          <button>Sign In</button>
+          <button>{signState === "Sign In" ? "Log In" : "Sign Up"}</button>
           <div className="form-help">
             <div className="remember">
               <input type="checkbox" />
@@ -28,8 +33,29 @@ const [signState, setSignState] = useState('Sign In')
           </div>
         </form>
         <div className="form-switch">
-          <p>New To Netflix? <span>Sign Up Now</span></p>
-          <p>Already have account? <span>Sign In Now</span></p>
+          {signState === "Sign In" ? (
+            <p>
+              New To Netflix?{" "}
+              <span
+                onClick={() => {
+                  setSignState("Sign Up");
+                }}
+              >
+                Sign Up Now
+              </span>
+            </p>
+          ) : (
+            <p>
+              Already have account?{" "}
+              <span
+                onClick={() => {
+                  setSignState("Sign In");
+                }}
+              >
+                Sign In Now
+              </span>
+            </p>
+          )}
         </div>
       </div>
     </div>
