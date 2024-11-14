@@ -6,6 +6,7 @@ import hero_title from "../../assets/hero_title.png";
 import play_icon from "../../assets/play_icon.png";
 import info_icon from "../../assets/info_icon.png";
 import TitleCards from '../../components/TitleCards/TitleCards';
+import Footer from '../../components/Footer/Footer';
 
 const Home = () => {
   return (
@@ -34,11 +35,12 @@ const Home = () => {
         </div>
       </div>
       <div className="more-cards">
-        <TitleCards />
-        <TitleCards />
-        <TitleCards />
-        <TitleCards />
+        <TitleCards title={"Blockbuster Movie"} />
+        <TitleCards title={"Only on Netflix"} />
+        <TitleCards title={"Upcoming"} />
+        <TitleCards title={"Top Pice for You"} />
       </div>
+      <Footer />
     </div>
   );
 }

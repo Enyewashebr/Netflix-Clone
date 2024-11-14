@@ -17,9 +17,13 @@
 
 .footer  ul{
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: auto auto auto auto ;
+    cursor: pointer;
+    list-style: none;
+    gap: 15px;
+    margin-bottom: 30px;
 }
 .copyright-text{
-    color:rgb(29, 26, 223);
+    color:rgb(154, 154, 162);
     font-size: 14px;
 }
