@@ -1,4 +1,4 @@
-import React from 'react'
+//import React from 'react'
 import './Home.css'
 import Navbar from '../../components/Navbar/Navbar'
 import herro_banner from "/hero_banner.jpg";

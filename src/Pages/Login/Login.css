@@ -7,7 +7,7 @@
     width: 150px;
 }
 .login-form{
-    background: rgba(0,0,0,0.75);
+    background: rgba(25, 25, 26, 0.75);
     width: 100%;
     max-width: 450px;
     border-radius: 4px;
@@ -55,19 +55,26 @@ cursor: pointer;
     align-items: center;
     justify-content: space-between;
     color: #b3b3b3;
+    font-size: 13px;
 }
 .remember{
     display: flex;
     align-items: center;
     gap: 5px;
+    /* margin-left: 0; */
 
 }
-.form-swicth{
+.remember input{
+    width: 18px;
+    height: 18px;
+}
+.form-switch{
   margin-top: 40px;
   color: #737373;  
 }
-.form-swicth span{
+.form-switch span{
     margin-left: 6px;
     color: #fff;
+    font-weight: 500;
     cursor: pointer;
 }
