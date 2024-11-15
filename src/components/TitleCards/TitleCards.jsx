@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import "./TitleCards.css";
 // import cards_data from "../../assets/cards/Cards_data";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 const TitleCards = ({ title, category }) => {
   const [apiData, setApiData] = useState([]);
@@ -51,6 +52,10 @@ const TitleCards = ({ title, category }) => {
       </div>
     </div>
   );
+};
+TitleCards.propTypes = {
+  title: PropTypes.string.isRequired,
+  category: PropTypes.string.isRequired,
 };
 
 export default TitleCards;
