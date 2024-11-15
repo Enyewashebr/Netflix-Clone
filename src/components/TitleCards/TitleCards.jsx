@@ -4,7 +4,7 @@ import "./TitleCards.css";
 import { Link } from "react-router-dom";
 
 const TitleCards = ({ title, category }) => {
-  const [apiDta, setApiData] = useState([]);
+  const [apiData, setApiData] = useState([]);
   const cardsRef = useRef();
 
   const options = {
@@ -37,7 +37,7 @@ const TitleCards = ({ title, category }) => {
     <div className="title-cards">
       <h2>{title ? title : "Popular on Netflix"}</h2>
       <div className="card-list" ref={cardsRef}>
-        {apiDta.map((card, index) => {
+        {apiData.map((card, index) => {
           return (
             <Link to={`/player/${card.id}`} className="card" key={index}>
               <img

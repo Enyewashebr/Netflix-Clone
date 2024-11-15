@@ -2,7 +2,7 @@
 import './Login.css'
 import logo from "../../assets/logo.png";
 import { useState } from 'react';
-import{login, signup} from '../../firebase'
+import{login, signup} from '../../firebase.js'
 
 const Login = () => {
 
@@ -11,6 +11,16 @@ const [signState, setSignState] = useState('Sign In');
 const [name, setName] = useState('')
 const [email, setEmail] = useState('')
 const [password, setPassword] = useState("");
+
+const user_auth = async (event)=>{
+  event.preventDefault();
+  if(signState==='Sign In'){
+    await login(email, password);
+
+  }else{
+    await signup(name, email, password);
+  }
+}
 
   return (
     <div className="login">
@@ -40,6 +50,7 @@ const [password, setPassword] = useState("");
             type="email"
             placeholder="Your Email"
             alt=""
+            // autocomplete="username"
           />
           <input
             value={password}
@@ -49,8 +60,11 @@ const [password, setPassword] = useState("");
             type="password"
             placeholder="Password"
             alt=""
+            // autocomplete="current-password"
           />
-          <button>{signState === "Sign In" ? "Log In" : "Sign Up"}</button>
+          <button onClick={user_auth} type="submit">
+            {signState === "Sign In" ? "Log In" : "Sign Up"}
+          </button>
           <div className="form-help">
             <div className="remember">
               <input type="checkbox" />
